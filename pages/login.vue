@@ -1,5 +1,7 @@
 <template>
     <div>
+        <h1 class="text-center"><i class="fas fa-user mr-3"></i> Sign in</h1>
+
         <div class="container">
             <b-form class="w-50 mx-auto" @submit.prevent="sendForm">
                 <b-form-group
@@ -60,6 +62,7 @@
 
     export default {
         layout: 'frontend',
+        name: 'login',
         data() {
             return {
                 form: {

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h1 class="text-center"><i class="fas fa-user mr-3"></i> Sign up</h1>
         <div class="container">
             <b-form class="w-50 mx-auto" @submit.prevent="regist">
                 <b-form-group

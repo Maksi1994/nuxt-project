@@ -1,7 +1,9 @@
 <template>
     <div>
         <frontend-header></frontend-header>
-        </nuxt>
+        <div class="container content-wrap px-0">
+            <Nuxt/>
+        </div>
     </div>
 </template>
 
@@ -14,3 +16,9 @@
         }
     };
 </script>
+
+<style scoped lang="scss">
+    .content-wrap {
+        padding-top: 150px;
+    }
+</style>
