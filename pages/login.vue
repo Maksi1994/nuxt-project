@@ -94,7 +94,6 @@
         },
         created() {
             this.$store.subscribe((mutation) => {
-                debugger;
                 if (mutation.type === "login") {
                     this.$router.push("/");
                 }
