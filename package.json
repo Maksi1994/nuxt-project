@@ -15,7 +15,9 @@
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.20",
     "cross-env": "^5.2.0",
+    "moment": "^2.24.0",
     "nuxt": "^2.4.0",
+    "vuejs-datepicker": "^1.5.4",
     "vuelidate": "^0.7.4",
     "vuex": "^3.1.1"
   },

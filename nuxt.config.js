@@ -38,7 +38,8 @@ export default {
     */
     plugins: [
         '~/plugins/vue-bootstrap',
-        '~/plugins/vuelidate'
+        '~/plugins/vuelidate',
+        '~/plugins/my-reuseble-elements',
     ],
 
     /*
