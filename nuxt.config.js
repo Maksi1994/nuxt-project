@@ -40,6 +40,8 @@ export default {
         '~/plugins/vue-bootstrap',
         '~/plugins/vuelidate',
         '~/plugins/my-reuseble-elements',
+        '~/plugins/vuelidate',
+        '~/plugins/global-components'
     ],
 
     /*

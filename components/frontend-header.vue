@@ -3,7 +3,6 @@
 
         <logo></logo>
 
-
         <div class="ml-5 pl-5">
             <b-nav pills>
                 <b-nav-item to="/" active-class="active" exact>

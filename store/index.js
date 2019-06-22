@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import * as axios from "axios";
+import favorites from 'favorites';
 
 Vue.use(Vuex);
 
@@ -48,6 +49,9 @@ const store = () => new Vuex.Store({
 
             }, 1000);
         }
+    },
+    modules: {
+      favorites
     }
 });
 
