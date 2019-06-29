@@ -1,10 +1,7 @@
 <template>
     <section>
         <div class="list">
-            <bloger-preview></bloger-preview>
-        </div>
-        <div class="pagination">
-            {{list.length}}
+            <bloger-preview :data="{}"></bloger-preview>
         </div>
     </section>
 </template>
@@ -14,36 +11,13 @@
 
     export default {
         layout: 'frontend',
-        asyncData() {
-            return new Promise((res, rej) => {
-                setTimeout(() => {
-                    res({
-                        list: [
-                            {
-                                id: 1,
-                                name: 'Karpinka Maxim',
-                                text: 'text100500'
-                            }
-                        ]
-                    });
+        data() {
+          return {
+              list: []
+          }
+        },
+        created() {
 
-                    console.log('async loadin');
-                }, 300);
-            });
-        },
-        computed: {
-            page() {
-                return this.$route.params.page;
-            }
-        },
-        methods: {
-            load() {
-
-            }
-        },
-        mounted() {
-            console.log('asd')
-            this.load();
         },
         components: {
             One
@@ -51,6 +25,6 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>

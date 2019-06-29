@@ -57,7 +57,6 @@
 
 <script>
     import {required, email, minLength} from "vuelidate/lib/validators";
-    import * as axios from "axios";
     import {mapActions} from "vuex";
 
     export default {
@@ -73,14 +72,13 @@
             };
         },
         methods: {
-            ...mapActions([
+            ...mapActions('auth', [
                 "login"
             ]),
             sendForm() {
                 this.submitted = true;
 
                 if (!this.$v.$invalid) {
-                    console.log("submit!");
 
                     this.login({
                         first_name: "Maxim",
@@ -94,7 +92,7 @@
         },
         created() {
             this.$store.subscribe((mutation) => {
-                if (mutation.type === "login") {
+                if (mutation.type === "auth/login") {
                     this.$router.push("/");
                 }
             });

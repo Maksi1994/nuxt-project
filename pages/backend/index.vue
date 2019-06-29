@@ -6,6 +6,7 @@
 
     export default {
         name: 'backend',
+        middleware: ['auth', 'admin'],
         data: function () {
             return {
                 editionIndex: null,

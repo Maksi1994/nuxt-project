@@ -1,58 +1,24 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import * as axios from "axios";
-import favorites from 'favorites';
+import favorites from './modules/favorites';
+import auth from './modules/auth';
+import cookies from './modules/cookies';
 
 Vue.use(Vuex);
 
 const store = () => new Vuex.Store({
-    state: {
-        user: null,
-        isInit: false,
-    },
-    getters: {
-        isAuth: (state) => !!state.user,
-        isAdmin: (state) => false
-    },
-    mutations: {
-        login: (state, userData) => {
-            state.user = userData;
-        },
-        logout: (state) => {
-            state.user = null;
-        },
-        loadAppData: (state, appData) => {
-            state.isInit = true;
-            state.user = appData.user;
-        }
-    },
+    namespaced: true,
     actions: {
-        loadAppData: ({commit}) => {
-            setTimeout(() => {
-                commit("loadAppData", {
-                    user: {
-                        first_name: "Maxim",
-                        last_name: "Karpinka"
-                    }
-                });
-            }, 1000);
-        },
-        login: ({commit}, payload) => {
-            setTimeout(() => {
-                commit("login", payload);
-
-            }, 1000);
-        },
-        logout: ({commit}) => {
-            setTimeout(() => {
-                commit("logout");
-
-            }, 1000);
+        async nuxtServerInit({dispatch, commit,}, {req, store}) {
+            commit('cookies/initCookies', req);
+            await dispatch('auth/loadAppData', store);
         }
     },
     modules: {
-      favorites
+        favorites,
+        auth,
+        cookies
     }
 });
 
-export default store
+export default store;

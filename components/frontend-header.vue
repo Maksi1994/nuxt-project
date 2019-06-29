@@ -21,7 +21,7 @@
                     <i class="fas fa-flag-checkered mr-1"></i>
                     Ratings
                 </b-nav-item>
-                <b-nav-item to="/favorites" exact-active-class="active">
+                <b-nav-item to="/favorites" active-class="active">
                     <i class="far fa-star mr-1"></i>
                     Favorites
                 </b-nav-item>
@@ -62,13 +62,15 @@
 
     export default {
         computed: {
-            ...mapGetters([
+            ...mapGetters('auth', [
                 "isAuth",
             ]),
-            ...mapState(['user'])
+            ...mapState('auth', [
+                'user'
+            ])
         },
         methods: {
-            ...mapActions([
+            ...mapActions('auth', [
                 "logout"
             ])
         },

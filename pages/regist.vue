@@ -120,7 +120,6 @@
 
 <script>
     import {required, email, minLength, sameAs} from "vuelidate/lib/validators";
-    import axios from "axios";
 
     export default {
         layout: 'frontend',
